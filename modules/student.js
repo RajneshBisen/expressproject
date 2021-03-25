@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const { router } = require('../app');
 mongoose.connect('mongodb+srv://m001:m001@sandbox.qhxgb.mongodb.net/student?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 const connect=mongoose.connection;
+
 const studentSchema=new mongoose.Schema({
     stdName:String,
     email:String,
@@ -9,7 +10,6 @@ const studentSchema=new mongoose.Schema({
     afterage:Number,
     mobileNo:Number
 });
-
 const studentModel=mongoose.model('student',studentSchema);
 
 // studentSchema.methods.totalage=function (){

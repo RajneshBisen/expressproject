@@ -14,6 +14,54 @@
   <body>
     <div class="container">
       <div class="row">
+        <% if(success !=''){%>
+       <div class="alert alert-success">
+         <strong>Success!</strong><%= success %>
+       </div>
+       <% }%>
+          <h1>Filter Student Records</h1>
+   <div class="col-md-12">
+      <form action="/search/" id="StudentForm" class="form-horizontal" method="post"  role="form">
+                  
+     <div class="col-md-3">
+        <div class="form-group">
+            <label for="name" class="col-md-12 control-label">By Name</label>
+            <div class="col-md-12">
+                <input type="text" id="searchName" class="form-control" name="fltrstdName" placeholder="Enter Name">
+            </div>
+        </div>
+     </div>
+     <div class="col-md-3">
+        <div class="form-group">
+            <label for="email" class="col-md-12 control-label">By Email</label>
+            <div class="col-md-12">
+                <input type="text" class="form-control" name="fltremail" placeholder="Enter Email">
+            </div>
+        </div>
+     </div>
+     <div class="col-md-3">
+        <div class="form-group">
+            <label for="mobileNo" class="col-md-12 control-label">By Mobile No</label>
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="fltrmobile" placeholder="Enter Mobile">
+                </div>
+        </div>
+     </div>
+     <div class="col-md-3">
+        <div class="form-group">
+            <label for="email" class="col-md-12 control-label">&nbsp;</label>
+           
+             <div class="col-md-12">
+                <input type="submit" class="form-control btn btn-primary" name="submit" placeholder="Filter">
+            </div>
+        </div>
+     </div>
+      </form>
+   </div>
+        </div>
+      </div>
+    <div class="container">
+      <div class="row">
     <h1><%= title %></h1>
     <table class="table table-striped table-primary">
       <thead>
@@ -23,6 +71,7 @@
         <th width="100">Age</th>
         <th width="100">After Age</th>
         <th width="100">Mobile No</th>
+        <th>Action</th>
       </tr>
       <%if (records.length >0){ %>
       <% records.forEach((row)=>{
@@ -33,7 +82,9 @@
           <td width="100"><%= row.age %></td>
           <td width="100"><%= row.afterage %></td>
           <td width="100"><%= row.mobileNo %></td>
-
+          <td width="100"><a class="btn btn-primary btn-xs" href="/edit/<%=row._id %>"><i class="fa fa-edit"></i></a>
+            <a class="btn btn-danger btn-xs" href="/delete/<%=row._id %>"><i class="fa fa-trash"></i></a>
+          </td>
         </tr>
       <%})} %>
 

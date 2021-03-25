@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+  </head>
+  <body>
+<div class="row">
+  <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-info">
+          <div class="panel-heading">
+              <div class="panel-title">Student Edit Form</div>
+               </div>  
+          <div class="panel-body" >
+              <form action="/update/" id="StudentForm" class="form-horizontal" method="post"  role="form" >
+                  <input type="hidden" name='id' value="<%=records._id %>">
+                  <div id="signupalert" style="display:none" class="alert alert-danger">
+                      <p>Error:</p>
+                      <span></span>
+                  </div>
+                      
+                  <div class="form-group">
+                      <label for="stdname" class="col-md-3 control-label">Student Name</label>
+                      <div class="col-md-9">
+                          <input type="text" class="form-control" name="stdname" value="<%=records.stdName %>" placeholder="Enter Student Name">
+                      </div>
+                  </div>
+                    
+                  <div class="form-group">
+                      <label for="email" class="col-md-3 control-label">Email</label>
+                      <div class="col-md-9">
+                          <input type="text" class="form-control" name="Email" value="<%=records.email %>" placeholder="Email Address">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="age" class="col-md-3 control-label">Age</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="Age" value="<%=records.age %>" placeholder="Enter Age">
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label for="afterage" class="col-md-3 control-label">After Age</label>
+                  <div class="col-md-9">
+                      <input type="text" class="form-control" name="Afterage" value="<%=records.afterage %>" placeholder="After Age">
+                  </div>
+              </div>
+              <div class="form-group">
+                <label for="mobileNo" class="col-md-3 control-label">Mobile No</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" name="MobileNo" value="<%=records.mobileNo %>" placeholder="Mobile No">
+                </div>
+
+            </div>
+
+            <div class="form-group">
+              <!-- Button -->                                        
+              <div class="col-md-offset-3 col-md-9">
+              <input type="submit" name="submit" value="submit" class="btn btn-primary">   
+              </div>
+          </div>
+                  </form>
+          </div>
+          </div>
+          </div>
+          </div>
+  </body>
+
+</html>
